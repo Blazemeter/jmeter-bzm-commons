@@ -7,7 +7,7 @@
     <groupId>com.blazemeter</groupId>
     <artifactId>jmeter-bzm-commons</artifactId>
     <packaging>jar</packaging>
-    <version>0.2</version>
+    <version>0.2.1</version>
     <name>BlazeMeter JMeter commons</name>
     <description>This project holds common utilities used by BlazeMeter plugin projects.</description>
     <url>https://github.com/Blazemeter/jmeter-bzm-commons</url>
