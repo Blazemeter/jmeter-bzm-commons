@@ -17,7 +17,7 @@ public class BlazemeterLabsLogo extends JLabel {
 
   private static final Logger LOG = LoggerFactory.getLogger(BlazemeterLabsLogo.class);
   private static final ImageIcon BLAZEMETER_LOGO = ThemedIcon
-      .fromResourceName("blazemeter-labs-logo.png");
+      .fromResourceName("blazemeter-by-perforce-logo.png");
 
   public BlazemeterLabsLogo(String pageURL) {
     super(BLAZEMETER_LOGO);

@@ -11,9 +11,8 @@ This is a list of the features and projects that use it:
 | Collapsible Panels      | ☑  | ☑  |     |      ||
 | Fields with validation  | ☑  | ✅  |     |      ||
 | Fields with placeholder | ☑  | ✅  |     |      ||
-| Themed icons            | ☑  | ✅  | ✅  |  ☑   | ☑ |
-| ButtonBuilder           | ☑  | ✅  | ✅  |      ||
-| ComponentBuilder        |    |     | ✅  |      ||
+| Themed icons            | ☑  | ✅  |  ☑  |  ☑   | ☑ |
+| ButtonBuilder           | ☑  | ✅  |     |      ||
 
 Legend: 
 * CR: Correlation Recorder
