@@ -43,11 +43,7 @@ public class FormValidation {
       }
     }
 
-    if (allFieldsValid) {
-      onValid.run();
-    } else {
-      onInvalid.run();
-    }
+    notifyResult(allFieldsValid);
   }
 
   public void applyFormats() {
@@ -63,10 +59,14 @@ public class FormValidation {
       return;
     }
 
-    if (isValid()) {
-      onValid.run();
-    } else {
-      onInvalid.run();
+    notifyResult(isValid());
+  }
+
+  // The callbacks are optional: a form may only need isValid() or the field formats.
+  private void notifyResult(boolean valid) {
+    Runnable callback = valid ? onValid : onInvalid;
+    if (callback != null) {
+      callback.run();
     }
   }
 
