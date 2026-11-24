@@ -7,10 +7,6 @@ import javax.swing.ImageIcon;
 
 public class ThemedIcon {
 
-  /*
-   A strong, thread-safe cache: a WeakHashMap keyed by paths built on each call dropped its
-   entries at the next garbage collection, and icons were loaded again.
-   */
   private static final Map<String, ImageIcon> CACHED_ICONS = new ConcurrentHashMap<>();
   private static final String RESOURCE_SEPARATOR = "/";
 

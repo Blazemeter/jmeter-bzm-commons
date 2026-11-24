@@ -57,9 +57,6 @@
             <version>4.0</version>
             <scope>provided</scope>
         </dependency>
-        <!-- maven-checkstyle-plugin was declared here as a dependency: it put velocity, commons-lang 2
-        and Guava on the compile classpath of every plugin using this library, which then compiled
-        imports that fail at run time in JMeter. The plugin is configured under <build> only. -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
