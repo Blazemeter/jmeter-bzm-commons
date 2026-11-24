@@ -17,18 +17,39 @@ import org.slf4j.LoggerFactory;
 public class BlazemeterLabsLogo extends JLabel {
 
   private static final Logger LOG = LoggerFactory.getLogger(BlazemeterLabsLogo.class);
-  private static final ImageIcon BLAZEMETER_LOGO = ThemedIcon
-      .fromResourceName("blazemeter-by-perforce-logo.png");
+  private static final String LOGO_RESOURCE = "blazemeter-by-perforce-logo.png";
+
+  private int logoWidth;
+  private int logoHeight;
 
   public BlazemeterLabsLogo(String pageURL) {
-    super(BLAZEMETER_LOGO);
+    super(ThemedIcon.fromResourceName(LOGO_RESOURCE));
     setBrowseOnClick(pageURL);
   }
 
   public BlazemeterLabsLogo(String pageURL, int width, int height) {
     super();
+    this.logoWidth = width;
+    this.logoHeight = height;
     setLogoSize(width, height);
     setBrowseOnClick(pageURL);
+  }
+
+  /*
+   Called when JMeter's look and feel changes: the logo follows the new theme (its dark or light
+   variant), as ThemedIconLabel does.
+   */
+  @Override
+  public void updateUI() {
+    super.updateUI();
+    if (getIcon() == null) {
+      return; // still being constructed
+    }
+    if (logoWidth > 0 && logoHeight > 0) {
+      setLogoSize(logoWidth, logoHeight);
+    } else {
+      setIcon(ThemedIcon.fromResourceName(LOGO_RESOURCE));
+    }
   }
 
   private void setBrowseOnClick(final String url) {
@@ -47,7 +68,7 @@ public class BlazemeterLabsLogo extends JLabel {
   }
 
   private void setLogoSize(int width, int height) {
-    Image scaledImg = BLAZEMETER_LOGO.getImage()
+    Image scaledImg = ThemedIcon.fromResourceName(LOGO_RESOURCE).getImage()
         .getScaledInstance(width, height, Image.SCALE_SMOOTH);
     setIcon(new ImageIcon(scaledImg));
     setPreferredSize(new Dimension(width, height));
